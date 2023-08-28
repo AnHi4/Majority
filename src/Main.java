@@ -9,15 +9,15 @@ public class Main {
 
 class Solution {
     public int majorityElement(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<>(); // мапа для присвоения значению в массиве его количество
         for (int num : nums) {
-            map.put(num, map.getOrDefault(num, 0) + 1);
+            map.put(num, map.getOrDefault(num, 0) + 1); //key - значение, value - количество
         }
         for (int num: nums) {
-            if(map.get(num) > nums.length/2){
+            if(map.get(num) > nums.length/2){ //возврат по условию n/2
                 return num;
             }
         }
-        return 0;
+        return 0;  //если что-то пошло не так
     }
 }
